@@ -1,0 +1,62 @@
+
+# API REST de Gestión de Inventario
+
+Este proyecto es un ejemplo sencillo de una **API REST** para gestionar un inventario,
+usando **Flask** (Python) como backend, **SQLite** como base de datos y una interfaz
+web en **HTML + CSS + JavaScript**.
+
+## Estructura del proyecto
+
+```text
+inventory_rest_app/
+├── app.py              # Aplicación Flask (API REST + frontend)
+├── inventario.db       # Base de datos SQLite (se crea automáticamente)
+├── templates/
+│   └── index.html      # Interfaz web
+└── static/
+    └── styles.css      # Estilos de la interfaz
+```
+
+## Instalación
+
+1. Crea y activa un entorno virtual (opcional pero recomendado).
+2. Instala Flask:
+
+```bash
+pip install flask
+```
+
+## Ejecución
+
+En la carpeta del proyecto:
+
+```bash
+python app.py
+```
+
+La aplicación levantará un servidor en:
+
+```text
+http://127.0.0.1:5001/
+```
+
+Abre esa URL en tu navegador para ver la interfaz web.
+
+## Endpoints principales de la API REST
+
+- `GET /api/items` → Lista todos los ítems
+- `GET /api/items/<id>` → Obtiene un ítem por ID
+- `POST /api/items` → Crea un nuevo ítem (JSON: nombre, cantidad, precio)
+- `PUT /api/items/<id>` → Actualiza completamente un ítem
+- `PATCH /api/items/<id>` → Actualiza parcialmente un ítem
+- `DELETE /api/items/<id>` → Elimina un ítem
+
+Ejemplo de JSON para crear o actualizar un ítem:
+
+```json
+{
+  "nombre": "Teclado mecánico",
+  "cantidad": 10,
+  "precio": 199.99
+}
+```
